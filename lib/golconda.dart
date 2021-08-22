@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/reviewscard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Golconda extends StatelessWidget {
   @override
@@ -41,6 +42,8 @@ class Golconda extends StatelessWidget {
 
 class Golcondapage extends StatelessWidget {
   @override
+  String url =
+      'https://www.telanganatourism.gov.in/partials/destinations/heritage-spots/hyderabad/golconda-fort.html';
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -99,6 +102,12 @@ class Golcondapage extends StatelessWidget {
             padding: EdgeInsets.all(32),
             child: Text(
                 'Golconda Fort, also known as Golkonda (Telugu: "shepherds hill"), is a fortified citadel and an early capital city of the Qutb Shahi dynasty (c. 1512–1687), located in Hyderabad, Telangana, India. Because of the vicinity of diamond mines, especially Kollur Mine, Golconda flourished as a trade centre of large diamonds, known as the Golconda Diamonds. The region has produced some of the worlds most famous diamonds, including the colourless Koh-i-Noor (now owned by the United Kingdom), the blue Hope (United States), the pink Daria-i-Noor (Iran), the white Regent (France), the Dresden Green (Germany), and the colourless Orlov (Russia), Nizam and Jacob (India), as well as the now lost diamonds Florentine Yellow, Akbar Shah and Great Mogul.'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              launch(url);
+            },
+            child: Text('Click for more information'),
           ),
           Reviewscard(),
         ]));

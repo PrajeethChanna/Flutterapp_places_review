@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/reviewscard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Goldentemple extends StatelessWidget {
   @override
@@ -43,6 +44,7 @@ class Goldentemple extends StatelessWidget {
 
 class Goldentemplepage extends StatelessWidget {
   @override
+  String url = 'https://www.goldentempleamritsar.org/';
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -102,6 +104,12 @@ class Goldentemplepage extends StatelessWidget {
             padding: EdgeInsets.all(32),
             child: Text(
                 'Founded in 1577 by Ram Das, Amritsar is an important hub of Sikh history and culture. The main attraction here is Harmandir Sahib, opened in 1604 and still often referred to as the Golden Temple for its beautiful gold decoration. The holiest of Indias many Sikh shrines (it also attracts many Hindus and people of other faiths), the temple was built in a blend of Hindu and Islamic styles, its lower marble section featuring such flourishes as ornate inlaid floral and animal motifs, while the large golden dome represents a lotus flower, a symbol of purity to Sikhs. In addition to its splendid design, visitors are equally impressed with the temples spiritual atmosphere, an effect enhanced by the prayers continuously chanted from the Sikh holy book and broadcast throughout the complex. Part of the overall experience-and visitors are welcome to participate-is the chance to enjoy one of the 50,000 free meals the attraction serves up to visitors each and every day.'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              launch(url);
+            },
+            child: Text('Click for more information'),
           ),
           Reviewscard(),
         ]));

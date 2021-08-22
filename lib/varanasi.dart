@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/reviewscard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Varanasi extends StatelessWidget {
   @override
@@ -41,6 +42,7 @@ class Varanasi extends StatelessWidget {
 
 class Varanasipage extends StatelessWidget {
   @override
+  String url = 'https://varanasi.nic.in/';
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -100,6 +102,12 @@ class Varanasipage extends StatelessWidget {
             padding: EdgeInsets.all(32),
             child: Text(
                 'A major pilgrimage center for Hindus, the holy city of Varanasi has long been associated with the mighty Ganges River, one of the faiths most important religious symbols. Dating back to the 8th century BC, Varanasi is one of the oldest still inhabited cities in the world. It offers many reasons to visit, not least of them the chance to explore the Old Quarter adjacent to the Ganges where youll find the Kashi Vishwanath Temple, built in 1780 (the New Vishwanath Temple with its seven separate temples is also of interest).'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              launch(url);
+            },
+            child: Text('Click for more information'),
           ),
           Reviewscard(),
         ]));

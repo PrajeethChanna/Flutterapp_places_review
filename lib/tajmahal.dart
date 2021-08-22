@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/reviewscard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Tajmahal extends StatelessWidget {
   @override
@@ -41,6 +42,7 @@ class Tajmahal extends StatelessWidget {
 
 class Tajmahalpage extends StatelessWidget {
   @override
+  String url = 'https://www.tajmahal.gov.in/';
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -99,6 +101,12 @@ class Tajmahalpage extends StatelessWidget {
             padding: EdgeInsets.all(32),
             child: Text(
                 'Perhaps Indias most recognizable building, the Taj Mahal is also the worlds most famous testimony to the power of love. Named after Mumtaz Mahal, the favorite wife of Emperor Shah Jahan, this most beautiful of mausoleums was begun upon her death in 1631 and took 20,000 workmen until 1648 to complete. Incorporating many elements of Islamic design including arches, minarets, an onion-shaped dome, and black calligraphy inlaid around the entrance, the Taj Mahal is largely constructed of white marble decorated with delicate inlaid floral patterns and precious and semi-precious stones such as jade, lapis lazuli, diamonds, and mother of pearl.'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              launch(url);
+            },
+            child: Text('Click for more information'),
           ),
           Reviewscard(),
         ]));

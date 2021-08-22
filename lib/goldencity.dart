@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/reviewscard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Goldencity extends StatelessWidget {
   @override
@@ -43,6 +44,7 @@ class Goldencity extends StatelessWidget {
 
 class Goldencitypage extends StatelessWidget {
   @override
+  String url = 'https://www.cityofgolden.net/';
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -102,6 +104,12 @@ class Goldencitypage extends StatelessWidget {
             padding: EdgeInsets.all(32),
             child: Text(
                 'Jaisalmer About this soundpronunciation (help·info), nicknamed "The Golden city", is a city in the Indian state of Rajasthan, located 575 kilometres (357 mi) west of the state capital Jaipur. The town stands on a ridge of yellowish sandstone and is crowned by the ancient Jaisalmer Fort. This fort contains a royal palace and several ornate Jain temples. Many of the houses and temples of both the fort and of the town below are built of finely sculptured sandstone. The town lies in the heart of the Thar Desert (the Great Indian Desert) and has a population, including the residents of the fort, of about 78,000. It is the administrative headquarters of Jaisalmer District. Jaisalmer was once the capital of Jaisalmer State.'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              launch(url);
+            },
+            child: Text('Click for more information'),
           ),
           Reviewscard(),
         ]));

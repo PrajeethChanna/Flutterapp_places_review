@@ -62,6 +62,7 @@ class GatewayofIndia extends StatelessWidget {
 
 class GatewayofIndiapage extends StatelessWidget {
   @override
+  String url = 'https://mumbaicity.gov.in/tourist-place/gateway-of-india/';
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -121,6 +122,12 @@ class GatewayofIndiapage extends StatelessWidget {
           padding: EdgeInsets.all(32),
           child: Text(
               'The Gateway of India is an arch-monument built in the early 20th century in the city of Mumbai, India. It was erected to commemorate the landing in December 1911 at Wellington Pier, Mumbai of King-Emperor George V and Queen-Empress Mary, the first British monarch to visit India. At the time of the royal visit, the gateway was not yet built, and a cardboard structure greeted the monarch. The foundation stone was laid in March 1913 for a monument built in the Indo-Saracenic style, incorporating elements of 16th-century Gujarati architecture. The final design of the monument by architect George Wittet was sanctioned only in 1914, and construction was completed in 1924. The structure is a triumphal arch made of basalt, which is 26 metres (85 feet) high.It is an effort from the architect George Wittet.'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            launch(url);
+          },
+          child: Text('Click for more information'),
         ),
         Reviewscard(),
       ]),

@@ -66,7 +66,7 @@ class Reviewscard extends StatelessWidget {
                   Icons.star_half,
                   color: Color(0xffffb300),
                 ),
-                Text('This is heellllllllll.'),
+                Text('It is a feel good place.'),
               ],
             ),
           ),
